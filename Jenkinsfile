@@ -10,8 +10,8 @@ pipeline {
 
     stage('Terraform') {
       steps {
-        sh 'terraform init terraform/'
-        sh 'terraform apply --auto-approve terraform/'
+        sh 'terraform -chdir=terraform/ init'
+        sh 'terraform -chdir=terraform/ apply --auto-approve'
       }
     }
   }

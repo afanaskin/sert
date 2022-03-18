@@ -16,6 +16,9 @@ resource "aws_instance" "build" {
   instance_type = "t3.micro"
   #key_name = "aws_key.pem"
   vpc_security_group_ids = ["sg-014aa96269c6d3b0d"]
+  tags {
+    group = build
+  }
 }
 
 resource "aws_instance" "run" {
@@ -23,4 +26,8 @@ resource "aws_instance" "run" {
   instance_type = "t3.micro"
   #key_name = "aws_key.pem"
   vpc_security_group_ids = ["sg-014aa96269c6d3b0d"]
+
+  tags {
+    group = run
+  }
 }
