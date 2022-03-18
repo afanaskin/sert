@@ -6,7 +6,7 @@ pipeline {
     stages {
         stage ('Copy source') {
           steps {
-            git 'https://github.com/afanaskin/hello.git'
+            git 'https://github.com/afanaskin/sert.git'
           }
         }
 
