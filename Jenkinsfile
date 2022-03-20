@@ -8,9 +8,15 @@ pipeline {
       }
     }
 
-    stage('Terraform') {
+    stage('Terraform1') {
       steps {
         sh 'terraform -chdir=terraform/ init'
+        sh 'terraform -chdir=terraform/ apply --auto-approve'
+      }
+    }
+
+    stage('Terraform2') {
+      steps {
         sh 'terraform -chdir=terraform/ apply --auto-approve'
       }
     }
