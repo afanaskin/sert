@@ -11,7 +11,7 @@ provider "aws" {
   region = "eu-north-1"
 }
 
-resource "aws_instance" "build" {
+resource "aws_instance" "bld" {
   ami = "ami-092cce4a19b438926"
   instance_type = "t3.micro"
   #key_name = "aws_key.pem"
@@ -21,7 +21,7 @@ resource "aws_instance" "build" {
     }
 }
 
-resource "aws_instance" "run" {
+resource "aws_instance" "rn" {
   ami = "ami-092cce4a19b438926"
   instance_type = "t3.micro"
   #key_name = "aws_key.pem"
