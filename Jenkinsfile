@@ -14,5 +14,13 @@ pipeline {
         sh 'terraform -chdir=terraform/ apply --auto-approve'
       }
     }
+
+    stage('Ansible') {
+      steps {
+        retry(count: 5) {
+          sh 'ansible-playbook -i ansible/provisioning.yml'
+        }
+      }
+    }
   }
 }
