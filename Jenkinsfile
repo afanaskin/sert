@@ -18,7 +18,7 @@ pipeline {
     stage('Ansible') {
       steps {
         retry(count: 5) {
-          sh 'ansible-playbook -i ansible/provisioning.yml'
+        sh 'ansible-playbook -i ansible/provisioning.yml'
         }
       }
     }
