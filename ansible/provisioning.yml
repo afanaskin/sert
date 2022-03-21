@@ -1,6 +1,6 @@
 ---
 - name: Install default-jdk
-  hosts: build
+  hosts: tag_group_build
   become: yes
 
   tasks:
