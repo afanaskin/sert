@@ -4,7 +4,7 @@
     name: "{{ item }}"
   with_items:
     - docker-py
-    - Docker API
+    #- Docker API
 
 - name: Directory preparation
   file:
