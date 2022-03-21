@@ -21,7 +21,7 @@
     dest: /home/app/hello-1.0.war
     mode: get
 
-- name: Create a data container
+- name: Create container
   #community.docker.docker_container:
   docker_container:
     name: hello
