@@ -1,12 +1,18 @@
 ---
-- name: Install default-jdk
+- name: Application building
   hosts: tag_group_build
-  become: yes
+  remote_user: ubuntu
+  become_user: root
+  become: true
+  roles:
+    - common
+    - build
 
-  tasks:
-    - name: Update system
-      apt: update_cache=yes
-
-    - name: Install jdk
-      apt:
-        name: default-jdk
+- name: Run application
+  hosts: tag_group_run
+  remote_user: ubuntu
+  become_user: root
+  become: true
+  roles:
+    - common
+    - run

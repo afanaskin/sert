@@ -1,0 +1,30 @@
+---
+- name: Install modules Docker
+  pip:
+    name: "{{ item }}"
+  with_items:
+    - docker-py
+    - Docker API
+
+- name: Directory preparation
+  file:
+    path: /home/app
+    state: directory
+    mode: '0777'
+  become: yes
+
+- name: GET war file
+  aws_s3:
+    aws_access_key: "{{ access_key }}"
+    aws_secret_key: "{{ secret_key }}"
+    bucket: mybacket30.test4.com
+    object: hello-1.0.war
+    dest: /home/app/hello-1.0.war
+    mode: get
+
+- name: Run app
+  docker_container:
+    name: hello-1.0
+    image: tomcat:alpine
+    volumes:
+      - /home/app/
