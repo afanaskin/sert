@@ -1,4 +1,10 @@
 ---
+- name: Install system
+  apt: name={{item}} state=present
+  with_items:
+    - python2
+    - python-pip
+
 - name: Install modules Docker
   pip:
     name: "{{ item }}"
