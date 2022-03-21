@@ -27,3 +27,4 @@
     image: tomcat:alpine
     volumes:
       - /home/app/:/usr/local/tomcat/webapps
+  become: yes
