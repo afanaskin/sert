@@ -17,7 +17,7 @@ resource "aws_instance" "build" {
   #key_name = "aws_key.pem"
   vpc_security_group_ids = ["sg-014aa96269c6d3b0d"]
   tags = {
-    Name = build
+    Name = bld
     group = "build"
   }
 }
@@ -28,7 +28,7 @@ resource "aws_instance" "run" {
   #key_name = "aws_key.pem"
   vpc_security_group_ids = ["sg-014aa96269c6d3b0d"]
   tags = {
-    Name = run
+    Name = rn
     group = "run"
   }
 }
