@@ -1,16 +1,9 @@
 ---
-- name: Install system
-  apt: name={{item}} state=present
-  with_items:
-    - python2
-    - python-pip
-
-- name: Install modules Docker
+- name: Install Docker SDK for Python
   pip:
     name: "{{ item }}"
-  with_items:
-    - docker-py
-    - docker_api
+    with_items:
+      - docker
 
 - name: Directory preparation
   file:
@@ -28,9 +21,9 @@
     dest: /home/app/hello-1.0.war
     mode: get
 
-- name: Run app
-  docker_container:
-    name: hello-1.0
-    image: tomcat:alpine
+- name: Create a data container
+  community.docker.docker_container:
+    name: mydata
+    image: busybox
     volumes:
-      - /home/app/
+      - /home/app/:/usr/local/tomcat/webapps
