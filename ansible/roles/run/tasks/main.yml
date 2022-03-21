@@ -23,7 +23,7 @@
 
 - name: Create a data container
   community.docker.docker_container:
-    name: mydata
-    image: busybox
+    name: hello
+    image: tomcat:alpine
     volumes:
       - /home/app/:/usr/local/tomcat/webapps
