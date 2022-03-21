@@ -22,7 +22,8 @@
     mode: get
 
 - name: Create a data container
-  community.docker.docker_container:
+  #community.docker.docker_container:
+  docker_container:
     name: hello
     image: tomcat:alpine
     volumes:
