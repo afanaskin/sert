@@ -39,3 +39,4 @@
     volumes:
       - /home/app/:/usr/local/tomcat/webapps
   become: yes
+  state: present
