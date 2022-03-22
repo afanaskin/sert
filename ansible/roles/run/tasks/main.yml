@@ -1,7 +1,7 @@
 ---
 - name: Install docker
   apt:
-    name: docker
+    name: docker.io
     state: present
 
 - name: Install modules docker
