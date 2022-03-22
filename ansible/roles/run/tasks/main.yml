@@ -6,7 +6,8 @@
     - docker
 
 - name: Add group
-    group: docker
+  group:
+    name: docker
     state: present
 
 - name: Add user to group
