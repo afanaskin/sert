@@ -40,7 +40,7 @@
   docker_container:
     name: hello
     image: tomcat:alpine
-    exposed_ports:
+    published_ports:
       - "8080:8080"
     volumes:
       - /home/app/:/usr/local/tomcat/webapps
