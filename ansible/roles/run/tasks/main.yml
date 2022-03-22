@@ -43,4 +43,4 @@
     image: tomcat:alpine
     volumes:
       - /home/app/:/usr/local/tomcat/webapps
-    state: present
+    state: started
