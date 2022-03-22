@@ -3,7 +3,7 @@
   pip:
     name: "{{ item }}"
   with_items:
-    - docker
+    - docker==4.4.4
 
 - name: Add group
   group:
