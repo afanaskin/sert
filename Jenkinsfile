@@ -8,14 +8,14 @@ pipeline {
       }
     }
 
-    stage('Terraform1') {
+    stage('Instance creation by Terraform') {
       steps {
         sh 'terraform -chdir=terraform/ init'
         sh 'terraform -chdir=terraform/ apply --auto-approve'
       }
     }
 
-    stage('Ansible') {
+    stage('Provisioning instances by Ansible') {
       steps {
         retry(count: 5) {
         sh 'ansible-playbook -i /etc/ansible/aws_ec2.yml ansible/provisioning.yml --vault-password-file /var/lib/jenkins/av_sc'
