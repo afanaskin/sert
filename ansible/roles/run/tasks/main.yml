@@ -1,9 +1,14 @@
 ---
+- name: Install docker
+  apt:
+    name: docker
+    state: present
+
 - name: Install modules docker
   pip:
     name: "{{ item }}"
   with_items:
-    - docker==4.4.4
+    - docker
 
 - name: Add group
   group:
